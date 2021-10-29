@@ -1,6 +1,6 @@
-const express = require('express')
+const express = require('express');
 const { MongoClient } = require('mongodb');
-
+const cors = require('cors');
 
 
 const app = express()
@@ -16,20 +16,22 @@ const client = new MongoClient(uri, {
     useUnifiedTopology: true,
 });
 
+
 // -------------------------------------------------------------------
+// DATABASE connection main function;
+// async function run() {
+//   try {
+//     await client.connect();
+//     const database = client.db("tour-data");
+//     const dataCollection = database.collection("data");
 
-async function run() {
-  try {
-    await client.connect();
-    const database = client.db("tour-data");
-    const dataCollection = database.collection("data");
 
 
-  } finally {
-    // await client.close();
-  }
-}
-run().catch(console.dir);
+//   } finally {
+//     // await client.close();
+//   }
+// }
+// run().catch(console.dir);
 
 
 
